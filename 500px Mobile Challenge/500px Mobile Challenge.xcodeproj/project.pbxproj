@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C3A25B21F16BF0E00B329A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25B11F16BF0E00B329A3 /* AppDelegate.swift */; };
+		9C3A25B41F16BF0E00B329A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25B31F16BF0E00B329A3 /* ViewController.swift */; };
+		9C3A25B71F16BF0E00B329A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A25B51F16BF0E00B329A3 /* Main.storyboard */; };
+		9C3A25B91F16BF0E00B329A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A25B81F16BF0E00B329A3 /* Assets.xcassets */; };
+		9C3A25BC1F16BF0E00B329A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A25BA1F16BF0E00B329A3 /* LaunchScreen.storyboard */; };
+		9C3A25C71F16BF0E00B329A3 /* _00px_Mobile_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25C61F16BF0E00B329A3 /* _00px_Mobile_ChallengeTests.swift */; };
+		9C3A25D21F16BF0F00B329A3 /* _00px_Mobile_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25D11F16BF0F00B329A3 /* _00px_Mobile_ChallengeUITests.swift */; };
+		9C3A25E11F16CC6000B329A3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25E01F16CC6000B329A3 /* ImageCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C3A25C31F16BF0E00B329A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C3A25A61F16BF0E00B329A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C3A25AD1F16BF0E00B329A3;
+			remoteInfo = "500px Mobile Challenge";
+		};
+		9C3A25CE1F16BF0E00B329A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C3A25A61F16BF0E00B329A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C3A25AD1F16BF0E00B329A3;
+			remoteInfo = "500px Mobile Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C3A25AE1F16BF0E00B329A3 /* 500px Mobile Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "500px Mobile Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3A25B11F16BF0E00B329A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C3A25B31F16BF0E00B329A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C3A25B61F16BF0E00B329A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C3A25B81F16BF0E00B329A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C3A25BB1F16BF0E00B329A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C3A25BD1F16BF0E00B329A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3A25C21F16BF0E00B329A3 /* 500px Mobile ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Mobile ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3A25C61F16BF0E00B329A3 /* _00px_Mobile_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _00px_Mobile_ChallengeTests.swift; sourceTree = "<group>"; };
+		9C3A25C81F16BF0E00B329A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3A25CD1F16BF0E00B329A3 /* 500px Mobile ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "500px Mobile ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3A25D11F16BF0F00B329A3 /* _00px_Mobile_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _00px_Mobile_ChallengeUITests.swift; sourceTree = "<group>"; };
+		9C3A25D31F16BF0F00B329A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3A25E01F16CC6000B329A3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = Views/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C3A25AB1F16BF0E00B329A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C3A25BF1F16BF0E00B329A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C3A25CA1F16BF0E00B329A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C3A25A51F16BF0E00B329A3 = {
+			isa = PBXGroup;
+			children = (
+				9C3A25B01F16BF0E00B329A3 /* 500px Mobile Challenge */,
+				9C3A25C51F16BF0E00B329A3 /* 500px Mobile ChallengeTests */,
+				9C3A25D01F16BF0F00B329A3 /* 500px Mobile ChallengeUITests */,
+				9C3A25AF1F16BF0E00B329A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C3A25AF1F16BF0E00B329A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C3A25AE1F16BF0E00B329A3 /* 500px Mobile Challenge.app */,
+				9C3A25C21F16BF0E00B329A3 /* 500px Mobile ChallengeTests.xctest */,
+				9C3A25CD1F16BF0E00B329A3 /* 500px Mobile ChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C3A25B01F16BF0E00B329A3 /* 500px Mobile Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				9C3A25E21F16CCE900B329A3 /* Networking */,
+				9C3A25DF1F16CC3200B329A3 /* Views */,
+				9C3A25B11F16BF0E00B329A3 /* AppDelegate.swift */,
+				9C3A25B31F16BF0E00B329A3 /* ViewController.swift */,
+				9C3A25B51F16BF0E00B329A3 /* Main.storyboard */,
+				9C3A25B81F16BF0E00B329A3 /* Assets.xcassets */,
+				9C3A25BA1F16BF0E00B329A3 /* LaunchScreen.storyboard */,
+				9C3A25BD1F16BF0E00B329A3 /* Info.plist */,
+			);
+			path = "500px Mobile Challenge";
+			sourceTree = "<group>";
+		};
+		9C3A25C51F16BF0E00B329A3 /* 500px Mobile ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C3A25C61F16BF0E00B329A3 /* _00px_Mobile_ChallengeTests.swift */,
+				9C3A25C81F16BF0E00B329A3 /* Info.plist */,
+			);
+			path = "500px Mobile ChallengeTests";
+			sourceTree = "<group>";
+		};
+		9C3A25D01F16BF0F00B329A3 /* 500px Mobile ChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C3A25D11F16BF0F00B329A3 /* _00px_Mobile_ChallengeUITests.swift */,
+				9C3A25D31F16BF0F00B329A3 /* Info.plist */,
+			);
+			path = "500px Mobile ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		9C3A25DF1F16CC3200B329A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C3A25E01F16CC6000B329A3 /* ImageCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9C3A25E21F16CCE900B329A3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C3A25AD1F16BF0E00B329A3 /* 500px Mobile Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C3A25D61F16BF0F00B329A3 /* Build configuration list for PBXNativeTarget "500px Mobile Challenge" */;
+			buildPhases = (
+				9C3A25AA1F16BF0E00B329A3 /* Sources */,
+				9C3A25AB1F16BF0E00B329A3 /* Frameworks */,
+				9C3A25AC1F16BF0E00B329A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "500px Mobile Challenge";
+			productName = "500px Mobile Challenge";
+			productReference = 9C3A25AE1F16BF0E00B329A3 /* 500px Mobile Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C3A25C11F16BF0E00B329A3 /* 500px Mobile ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C3A25D91F16BF0F00B329A3 /* Build configuration list for PBXNativeTarget "500px Mobile ChallengeTests" */;
+			buildPhases = (
+				9C3A25BE1F16BF0E00B329A3 /* Sources */,
+				9C3A25BF1F16BF0E00B329A3 /* Frameworks */,
+				9C3A25C01F16BF0E00B329A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C3A25C41F16BF0E00B329A3 /* PBXTargetDependency */,
+			);
+			name = "500px Mobile ChallengeTests";
+			productName = "500px Mobile ChallengeTests";
+			productReference = 9C3A25C21F16BF0E00B329A3 /* 500px Mobile ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C3A25CC1F16BF0E00B329A3 /* 500px Mobile ChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C3A25DC1F16BF0F00B329A3 /* Build configuration list for PBXNativeTarget "500px Mobile ChallengeUITests" */;
+			buildPhases = (
+				9C3A25C91F16BF0E00B329A3 /* Sources */,
+				9C3A25CA1F16BF0E00B329A3 /* Frameworks */,
+				9C3A25CB1F16BF0E00B329A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C3A25CF1F16BF0E00B329A3 /* PBXTargetDependency */,
+			);
+			name = "500px Mobile ChallengeUITests";
+			productName = "500px Mobile ChallengeUITests";
+			productReference = 9C3A25CD1F16BF0E00B329A3 /* 500px Mobile ChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C3A25A61F16BF0E00B329A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Raymond Kam";
+				TargetAttributes = {
+					9C3A25AD1F16BF0E00B329A3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NT8RKCPT5K;
+						ProvisioningStyle = Automatic;
+					};
+					9C3A25C11F16BF0E00B329A3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NT8RKCPT5K;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C3A25AD1F16BF0E00B329A3;
+					};
+					9C3A25CC1F16BF0E00B329A3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NT8RKCPT5K;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C3A25AD1F16BF0E00B329A3;
+					};
+				};
+			};
+			buildConfigurationList = 9C3A25A91F16BF0E00B329A3 /* Build configuration list for PBXProject "500px Mobile Challenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C3A25A51F16BF0E00B329A3;
+			productRefGroup = 9C3A25AF1F16BF0E00B329A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C3A25AD1F16BF0E00B329A3 /* 500px Mobile Challenge */,
+				9C3A25C11F16BF0E00B329A3 /* 500px Mobile ChallengeTests */,
+				9C3A25CC1F16BF0E00B329A3 /* 500px Mobile ChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C3A25AC1F16BF0E00B329A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C3A25BC1F16BF0E00B329A3 /* LaunchScreen.storyboard in Resources */,
+				9C3A25B91F16BF0E00B329A3 /* Assets.xcassets in Resources */,
+				9C3A25B71F16BF0E00B329A3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C3A25C01F16BF0E00B329A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C3A25CB1F16BF0E00B329A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C3A25AA1F16BF0E00B329A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C3A25E11F16CC6000B329A3 /* ImageCollectionViewCell.swift in Sources */,
+				9C3A25B41F16BF0E00B329A3 /* ViewController.swift in Sources */,
+				9C3A25B21F16BF0E00B329A3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C3A25BE1F16BF0E00B329A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C3A25C71F16BF0E00B329A3 /* _00px_Mobile_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C3A25C91F16BF0E00B329A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C3A25D21F16BF0F00B329A3 /* _00px_Mobile_ChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C3A25C41F16BF0E00B329A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C3A25AD1F16BF0E00B329A3 /* 500px Mobile Challenge */;
+			targetProxy = 9C3A25C31F16BF0E00B329A3 /* PBXContainerItemProxy */;
+		};
+		9C3A25CF1F16BF0E00B329A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C3A25AD1F16BF0E00B329A3 /* 500px Mobile Challenge */;
+			targetProxy = 9C3A25CE1F16BF0E00B329A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C3A25B51F16BF0E00B329A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C3A25B61F16BF0E00B329A3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C3A25BA1F16BF0E00B329A3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C3A25BB1F16BF0E00B329A3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C3A25D41F16BF0F00B329A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C3A25D51F16BF0F00B329A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C3A25D71F16BF0F00B329A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NT8RKCPT5K;
+				INFOPLIST_FILE = "500px Mobile Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raymondkam.-00px-Mobile-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9C3A25D81F16BF0F00B329A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NT8RKCPT5K;
+				INFOPLIST_FILE = "500px Mobile Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raymondkam.-00px-Mobile-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9C3A25DA1F16BF0F00B329A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = NT8RKCPT5K;
+				INFOPLIST_FILE = "500px Mobile ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raymondkam.-00px-Mobile-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/500px Mobile Challenge.app/500px Mobile Challenge";
+			};
+			name = Debug;
+		};
+		9C3A25DB1F16BF0F00B329A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = NT8RKCPT5K;
+				INFOPLIST_FILE = "500px Mobile ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raymondkam.-00px-Mobile-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/500px Mobile Challenge.app/500px Mobile Challenge";
+			};
+			name = Release;
+		};
+		9C3A25DD1F16BF0F00B329A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = NT8RKCPT5K;
+				INFOPLIST_FILE = "500px Mobile ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raymondkam.-00px-Mobile-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "500px Mobile Challenge";
+			};
+			name = Debug;
+		};
+		9C3A25DE1F16BF0F00B329A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = NT8RKCPT5K;
+				INFOPLIST_FILE = "500px Mobile ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raymondkam.-00px-Mobile-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "500px Mobile Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C3A25A91F16BF0E00B329A3 /* Build configuration list for PBXProject "500px Mobile Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C3A25D41F16BF0F00B329A3 /* Debug */,
+				9C3A25D51F16BF0F00B329A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C3A25D61F16BF0F00B329A3 /* Build configuration list for PBXNativeTarget "500px Mobile Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C3A25D71F16BF0F00B329A3 /* Debug */,
+				9C3A25D81F16BF0F00B329A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9C3A25D91F16BF0F00B329A3 /* Build configuration list for PBXNativeTarget "500px Mobile ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C3A25DA1F16BF0F00B329A3 /* Debug */,
+				9C3A25DB1F16BF0F00B329A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9C3A25DC1F16BF0F00B329A3 /* Build configuration list for PBXNativeTarget "500px Mobile ChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C3A25DD1F16BF0F00B329A3 /* Debug */,
+				9C3A25DE1F16BF0F00B329A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C3A25A61F16BF0E00B329A3 /* Project object */;
+}
