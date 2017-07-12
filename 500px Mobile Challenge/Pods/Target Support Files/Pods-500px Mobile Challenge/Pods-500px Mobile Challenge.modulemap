@@ -1,0 +1,6 @@
+framework module Pods_500px_Mobile_Challenge {
+  umbrella header "Pods-500px Mobile Challenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
