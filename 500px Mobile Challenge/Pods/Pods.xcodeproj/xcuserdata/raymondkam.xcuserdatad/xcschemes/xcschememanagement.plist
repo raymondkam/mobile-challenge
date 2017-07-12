@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>OAuthSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-500px Mobile Challenge.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>05856D45E0E1EFB2DDA8A906C8C4B2F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>281BCD4263FA8963089088791785D745</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>85C745DF85EB0711CFCC6ACD6069E401</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B54B94F57E5CECB26EB6D6D4253CBD6</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
