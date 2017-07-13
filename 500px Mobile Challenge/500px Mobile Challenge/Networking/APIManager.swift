@@ -28,6 +28,7 @@ class APIManager {
         Alamofire.request(APIConstants.BaseURL + APIConstants.ResourcePhotos, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             guard response.error == nil else {
                 print("error fetching photos")
+                completion(nil, response.error)
                 return
             }
             guard let jsonDictionary = response.result.value as? [String: Any] else {
