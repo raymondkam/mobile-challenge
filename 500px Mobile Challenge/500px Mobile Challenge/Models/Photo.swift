@@ -14,6 +14,7 @@ class Photo {
     var description: String
     var width: Int
     var height: Int
+    var images: [[String: Any]]
     
     init?(jsonDictionary: [String: Any]) {
         guard let id = jsonDictionary["id"] as? Int else { return nil }
@@ -21,11 +22,13 @@ class Photo {
         guard let description = jsonDictionary["description"] as? String else { return nil }
         guard let width = jsonDictionary["width"] as? Int else { return nil }
         guard let height = jsonDictionary["height"] as? Int else { return nil }
+        guard let images = jsonDictionary["images"] as? [[String: Any]] else { return nil }
         
         self.id = id
         self.name = name
         self.description = description
         self.width = width
         self.height = height
+        self.images = images
     }
 }
