@@ -1,15 +1,12 @@
 PODS:
   - Alamofire (4.4.0)
-  - OAuthSwift (1.1.2)
 
 DEPENDENCIES:
   - Alamofire
-  - OAuthSwift
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  OAuthSwift: 5aa5659984d3ca3206ba636a9e7a9c6626b2e8bd
 
-PODFILE CHECKSUM: 9abb8e496641dc8fe294e4bf3570bfd43333b8d8
+PODFILE CHECKSUM: be960147e9f1b264c74c7ea3e443990dc4a26e73
 
 COCOAPODS: 1.2.1
