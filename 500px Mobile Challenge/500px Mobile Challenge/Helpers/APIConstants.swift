@@ -12,6 +12,8 @@ struct APIConstants {
     static let BaseURL = "https://api.500px.com/v1/"
     static let ResourcePhotos = "photos"
     
+    static let FeaturePopular = "popular"
+    
     static let CategoryNude = "4"
     
     static let ImageSize300pxHigh = "20"

@@ -8,13 +8,25 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotoCollectionViewController: UICollectionViewController {
+    
+    var dataSource = [Photo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        APIManager.sharedInstance.fetchPhotos(feature: APIConstants.FeaturePopular, numberOfImages: 20, imageSize: APIConstants.ImageSize300pxHigh) { [weak self] (photoStream, error) in
+            guard error == nil else {
+                print("error fetching photos \(String(describing: error?.localizedDescription))")
+                return
+            }
+            guard let photoStream = photoStream else {
+                print("no photostream received")
+                return
+            }
+            self?.dataSource = photoStream.photos
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -31,10 +43,10 @@ class PhotoCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
+        
+        let photo = dataSource[indexPath.item]
+        
         return cell
     }
 
