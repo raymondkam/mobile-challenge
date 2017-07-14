@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol PhotoDetailCollectionViewControllerDelegate: class {
+    func photoDetailCollectionViewControllerDidScrollToNewIndexPath(_: PhotoDetailCollectionViewController, indexPath: IndexPath)
+}
+
 private let reuseIdentifier = "PhotoDetailCell"
 
 class PhotoDetailCollectionViewController: UIViewController {
 
     var dataSource = [Photo]()
     var currentIndexPath: IndexPath?
+    weak var delegate: PhotoDetailCollectionViewControllerDelegate?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -75,6 +80,30 @@ extension PhotoDetailCollectionViewController: UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return view.frame.size
+    }
+    
+}
+
+extension PhotoDetailCollectionViewController: UIScrollViewDelegate {
+    
+    /*
+     * Know which index path the collection view is on after a 
+     * swipe to the next image
+     * From https://stackoverflow.com/a/36549067/5091298
+     */
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
+        
+        print(visibleIndexPath)
+        
+        delegate?.photoDetailCollectionViewControllerDidScrollToNewIndexPath(self, indexPath: visibleIndexPath)
     }
     
 }

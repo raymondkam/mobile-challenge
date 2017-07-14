@@ -43,6 +43,7 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
                     let photoDetailViewController = segue.destination as! PhotoDetailCollectionViewController
                     photoDetailViewController.dataSource = dataSource
                     photoDetailViewController.currentIndexPath = indexPath
+                    photoDetailViewController.delegate = self
                 }
             }
         default:
@@ -85,6 +86,13 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width / 2, height: view.frame.width / 2)
     }
+    
+}
 
-
+extension PhotoCollectionViewController: PhotoDetailCollectionViewControllerDelegate {
+    
+    func photoDetailCollectionViewControllerDidScrollToNewIndexPath(_: PhotoDetailCollectionViewController, indexPath: IndexPath) {
+        collectionView?.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
+    }
+    
 }
