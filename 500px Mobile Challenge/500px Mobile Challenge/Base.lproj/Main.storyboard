@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo Collection View Controller-->
+        <!--500px Mobile Challenge-->
         <scene sceneID="NzN-lE-azB">
             <objects>
                 <collectionViewController id="caZ-rp-CuW" customClass="PhotoCollectionViewController" customModule="_00px_Mobile_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                             <outlet property="delegate" destination="caZ-rp-CuW" id="wbg-Db-whC"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Abe-WI-2BU"/>
+                    <navigationItem key="navigationItem" title="500px Mobile Challenge" id="4v5-KU-eyM"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCL-Kc-Jn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,16 +63,19 @@
         <!--Navigation Controller-->
         <scene sceneID="8B1-hY-tsu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbA-dl-a3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="2B6-2c-528" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dt7-qI-P4G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dt7-qI-P4G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="caZ-rp-CuW" kind="relationship" relationship="rootViewController" id="KbK-E8-RsI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bbA-dl-a3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-167" y="136"/>
         </scene>
