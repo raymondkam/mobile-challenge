@@ -58,11 +58,17 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
         guard let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
             return
         }
-        flowLayout.invalidateLayout()
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            flowLayout.invalidateLayout()
+        }) { [weak self] (context) in
+            self?.greedoLayout?.clearCache()
+            self?.collectionView?.reloadData()
+        }
+        
     }
     
     fileprivate func fetchNextPageOfPhotos() {
