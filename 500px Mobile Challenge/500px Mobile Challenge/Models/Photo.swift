@@ -45,7 +45,7 @@ class Photo {
                 if let urlString = imageDictionary["url"] as? String {
                     self.lowResUrlString = urlString
                 }
-            } else if imageDictionary["size"] as? Int == Int(APIConstants.ImageSize2048pxLongestEdge) {
+            } else if imageDictionary["size"] as? Int == Int(APIConstants.ImageSize1170pxLongestEdge) {
                 if let urlString = imageDictionary["url"] as? String {
                     self.highResUrlString = urlString
                 }

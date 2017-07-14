@@ -152,8 +152,6 @@ extension PhotoDetailCollectionViewController: UIScrollViewDelegate {
         
         let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
         
-        print(visibleIndexPath)
-        
         if currentIndexPath != visibleIndexPath {
             currentIndexPath = visibleIndexPath
             

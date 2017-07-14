@@ -28,7 +28,7 @@ class APIManager {
                           "page": String(page),
                           "exclude": APIConstants.CategoryNude,
                           "rpp": String(numberOfImages),
-                          "image_size": [APIConstants.ImageSize300pxHigh, APIConstants.ImageSize2048pxLongestEdge],
+                          "image_size": [APIConstants.ImageSize300pxHigh, APIConstants.ImageSize1170pxLongestEdge],
                           "consumer_key": APIConstants.ConsumerKey] as [String : Any]
         
         Alamofire.request(APIConstants.BaseURL + APIConstants.ResourcePhotos, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
