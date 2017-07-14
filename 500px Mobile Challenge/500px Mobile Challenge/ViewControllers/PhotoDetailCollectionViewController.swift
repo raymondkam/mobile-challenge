@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol PhotoDetailCollectionViewControllerDelegate: class {
     func photoDetailCollectionViewControllerDidScrollToNewIndexPath(_: PhotoDetailCollectionViewController, indexPath: IndexPath)
@@ -103,14 +104,23 @@ extension PhotoDetailCollectionViewController: UICollectionViewDataSource {
         let photoDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoDetailCollectionViewCell
         
         let photo = dataSource[indexPath.item]
-        if let urlString = (photo.images.first { (dictionary) -> Bool in
-            return dictionary["url"] != nil
-        })?["url"] as? String {
-            let url = URL(string: urlString)
-            photoDetailCell.imageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+        var placeholderImage: Image?
+        
+        if let lowResUrlString = photo.lowResUrlString {
+            ImageCache.default.retrieveImage(forKey: lowResUrlString, options: nil) { (image, cacheType) in
+                if let image = image {
+                    placeholderImage = image
+                }
+            }
         }
         
-        // Configure the cell
+        if let highResString = photo.highResUrlString {
+            photoDetailCell.imageView.kf.setImage(with: URL(string: highResString), placeholder: placeholderImage, options: [.transition(.fade(0.2))], progressBlock: nil, completionHandler: nil)
+        } else {
+            if let lowResUrlString = photo.lowResUrlString {
+                photoDetailCell.imageView.kf.setImage(with: URL(string: lowResUrlString))
+            }
+        }
         
         return photoDetailCell
     }

@@ -17,6 +17,7 @@ struct APIConstants {
     static let CategoryNude = "4"
     
     static let ImageSize300pxHigh = "20"
+    static let ImageSize2048pxLongestEdge = "2048"
     
     static let ConsumerKey = "8MZDw1vNUYI59JvMaKLExSV6UMvm8Ny3Q4hWir6Z"
 }

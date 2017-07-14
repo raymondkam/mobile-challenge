@@ -14,6 +14,8 @@ class Photo {
     var width: Int
     var height: Int
     var images: [[String: Any]]
+    var lowResUrlString: String?
+    var highResUrlString: String?
     var votesCount: Int
     var isNsfw: Bool
     var user: User
@@ -37,5 +39,17 @@ class Photo {
         self.votesCount = votesCount
         self.isNsfw = isNsfw
         self.user = user
+        
+        for imageDictionary in images {
+            if imageDictionary["size"] as? Int == Int(APIConstants.ImageSize300pxHigh) {
+                if let urlString = imageDictionary["url"] as? String {
+                    self.lowResUrlString = urlString
+                }
+            } else if imageDictionary["size"] as? Int == Int(APIConstants.ImageSize2048pxLongestEdge) {
+                if let urlString = imageDictionary["url"] as? String {
+                    self.highResUrlString = urlString
+                }
+            }
+        }
     }
 }
