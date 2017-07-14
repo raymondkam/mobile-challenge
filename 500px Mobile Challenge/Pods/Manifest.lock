@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.4.0)
+  - GreedoLayout (1.2.0)
   - Kingfisher (3.10.1)
 
 DEPENDENCIES:
   - Alamofire
+  - GreedoLayout
   - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  GreedoLayout: b1a1adc6ed5f281353225e3eb21d18cedee8e513
   Kingfisher: 33a1b82140fcb14a9fc13f78dfde2a03ff8de8cb
 
-PODFILE CHECKSUM: 0ba8c26398074f8753dde5c11a769b3590c5ffe2
+PODFILE CHECKSUM: ee4f9b5febedfab6df0f30a6e34de6430c69e868
 
 COCOAPODS: 1.2.1

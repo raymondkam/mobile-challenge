@@ -1,3 +1,4 @@
+
 //
 //  PhotoCollectionViewController.swift
 //  500px Mobile Challenge
@@ -8,19 +9,28 @@
 
 import UIKit
 import Kingfisher
+import GreedoLayout
 
 private let reuseIdentifier = "PhotoCell"
 private let loadNextPageIndexPathOffset = 4
 private let fetchNumberOfImages = 20
+private let greedoRowMaximumHeight: CGFloat = 200.0
 
 class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var dataSource = [Photo]()
     var nextPage = 1
+    var greedoLayout: GreedoCollectionViewLayout?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchNextPageOfPhotos()
+        
+        if let collectionView = collectionView {
+            greedoLayout = GreedoCollectionViewLayout.init(collectionView: collectionView)
+            greedoLayout?.rowMaximumHeight = greedoRowMaximumHeight
+            greedoLayout?.dataSource = self
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,7 +117,7 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
     // MARK: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width / 2, height: view.frame.width / 2)
+        return greedoLayout!.sizeForPhoto(at: indexPath)
     }
 
 }
@@ -118,4 +128,14 @@ extension PhotoCollectionViewController: PhotoDetailCollectionViewControllerDele
         collectionView?.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
     }
     
+}
+
+extension PhotoCollectionViewController: GreedoCollectionViewLayoutDataSource {
+    func greedoCollectionViewLayout(_ layout: GreedoCollectionViewLayout!, originalImageSizeAt indexPath: IndexPath!) -> CGSize {
+        if indexPath.item < dataSource.count {
+            let photo = dataSource[indexPath.item]
+            return CGSize(width: photo.width, height: photo.height)
+        }
+        return .zero
+    }
 }

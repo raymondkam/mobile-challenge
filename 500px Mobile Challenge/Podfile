@@ -10,6 +10,9 @@ target '500px Mobile Challenge' do
   pod 'Alamofire'
   pod 'Kingfisher'
 
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'GreedoLayout'
+
   target '500px Mobile ChallengeTests' do
     inherit! :search_paths
     # Pods for testing
