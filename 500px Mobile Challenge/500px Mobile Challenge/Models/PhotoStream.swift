@@ -15,7 +15,7 @@ class PhotoStream {
     var totalItems: Int
     var photos: [Photo]
     
-    init?(jsonDictionary: [String: Any]) {
+    init?(jsonDictionary: [String: Any], includeNsfw: Bool) {
         guard let feature = jsonDictionary["feature"] as? String else { return nil }
         guard let currentPage = jsonDictionary["current_page"] as? Int else { return nil }
         guard let totalPages = jsonDictionary["total_pages"] as? Int else { return nil }
@@ -31,7 +31,13 @@ class PhotoStream {
         
         for photoDictionary in photoDictionaries {
             if let photo = Photo(jsonDictionary: photoDictionary) {
-                photos.append(photo)
+                if !includeNsfw {
+                    if !photo.isNsfw {
+                        photos.append(photo)
+                    }
+                } else {
+                    photos.append(photo)
+                }
             }
         }
         

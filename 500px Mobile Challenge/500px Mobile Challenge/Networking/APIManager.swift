@@ -22,6 +22,7 @@ class APIManager {
                      page: Int,
                      numberOfImages: Int,
                      imageSize: String,
+                     includeNsfw: Bool,
                      completion: @escaping (_ photoStream: PhotoStream?, _ error: Error?) -> Void) {
         let parameters = ["feature": feature,
                           "page": String(page),
@@ -40,7 +41,7 @@ class APIManager {
                 print("json invalid")
                 return
             }
-            if let photoStream = PhotoStream(jsonDictionary: jsonDictionary) {
+            if let photoStream = PhotoStream(jsonDictionary: jsonDictionary, includeNsfw: includeNsfw) {
                 completion(photoStream, nil)
             }
             

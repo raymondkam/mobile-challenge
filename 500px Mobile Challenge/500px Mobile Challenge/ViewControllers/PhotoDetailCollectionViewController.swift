@@ -21,6 +21,11 @@ class PhotoDetailCollectionViewController: UIViewController {
     weak var delegate: PhotoDetailCollectionViewControllerDelegate?
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var photoDetailsStackView: UIStackView!
+    @IBOutlet weak var userThumbnailImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var votesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +42,11 @@ class PhotoDetailCollectionViewController: UIViewController {
         
         if let currentIndexPath = currentIndexPath {
             collectionView.scrollToItem(at: currentIndexPath, at: .left, animated: false)
+            
+            let photo = dataSource[currentIndexPath.item]
+            updatePhotoDetails(with: photo)
         }
-    }
-
-    @IBAction func handleCloseButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -63,6 +68,19 @@ class PhotoDetailCollectionViewController: UIViewController {
         }) { (context:UIViewControllerTransitionCoordinatorContext) in
             
         }
+    }
+    
+    fileprivate func updatePhotoDetails(with photo: Photo) {
+        let user = photo.user
+        let url = URL(string: user.userPicUrl)
+        userThumbnailImageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+        usernameLabel.text = user.fullName
+        titleLabel.text = photo.name
+        votesLabel.text = "\(photo.votesCount) people"
+    }
+    
+    @IBAction func handleCloseButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -110,7 +128,7 @@ extension PhotoDetailCollectionViewController: UICollectionViewDelegateFlowLayou
 extension PhotoDetailCollectionViewController: UIScrollViewDelegate {
     
     /*
-     * Know which index path the collection view is on after a 
+     * Know which index path the collection view is on after a
      * swipe to the next image
      * From https://stackoverflow.com/a/36549067/5091298
      */
@@ -126,9 +144,15 @@ extension PhotoDetailCollectionViewController: UIScrollViewDelegate {
         
         print(visibleIndexPath)
         
-        currentIndexPath = visibleIndexPath
+        if currentIndexPath != visibleIndexPath {
+            currentIndexPath = visibleIndexPath
+            
+            let photo = dataSource[visibleIndexPath.item]
+            updatePhotoDetails(with: photo)
+            
+            delegate?.photoDetailCollectionViewControllerDidScrollToNewIndexPath(self, indexPath: visibleIndexPath)
+        }
         
-        delegate?.photoDetailCollectionViewControllerDidScrollToNewIndexPath(self, indexPath: visibleIndexPath)
     }
     
 }

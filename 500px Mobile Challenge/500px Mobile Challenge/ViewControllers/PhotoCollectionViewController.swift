@@ -11,6 +11,7 @@ import Kingfisher
 
 private let reuseIdentifier = "PhotoCell"
 private let loadNextPageIndexPathOffset = 4
+private let fetchNumberOfImages = 20
 
 class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -53,7 +54,7 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
     }
     
     fileprivate func fetchNextPageOfPhotos() {
-        APIManager.sharedInstance.fetchPhotos(feature: APIConstants.FeaturePopular, page: nextPage, numberOfImages: 20, imageSize: APIConstants.ImageSize300pxHigh) { [weak self] (photoStream, error) in
+        APIManager.sharedInstance.fetchPhotos(feature: APIConstants.FeaturePopular, page: nextPage, numberOfImages: fetchNumberOfImages, imageSize: APIConstants.ImageSize300pxHigh, includeNsfw: false) { [weak self] (photoStream, error) in
             guard error == nil else {
                 print("error fetching photos \(String(describing: error?.localizedDescription))")
                 return
