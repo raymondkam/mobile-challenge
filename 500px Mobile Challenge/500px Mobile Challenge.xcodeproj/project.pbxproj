@@ -23,6 +23,8 @@
 		9C3A25EE1F16F11D00B329A3 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25ED1F16F11D00B329A3 /* APIConstants.swift */; };
 		9C3A25F01F16F12400B329A3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25EF1F16F12400B329A3 /* Photo.swift */; };
 		9C3A25F31F16FBA900B329A3 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25F21F16FBA900B329A3 /* PhotoCollectionViewController.swift */; };
+		9C3A25F91F183B2200B329A3 /* PhotoDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25F81F183B2200B329A3 /* PhotoDetailCollectionViewCell.swift */; };
+		9C3A25FB1F1842EF00B329A3 /* PhotoDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A25FA1F1842EF00B329A3 /* PhotoDetailCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		9C3A25ED1F16F11D00B329A3 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIConstants.swift; path = Helpers/APIConstants.swift; sourceTree = "<group>"; };
 		9C3A25EF1F16F12400B329A3 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Models/Photo.swift; sourceTree = "<group>"; };
 		9C3A25F21F16FBA900B329A3 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewController.swift; path = ViewControllers/PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		9C3A25F81F183B2200B329A3 /* PhotoDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailCollectionViewCell.swift; path = Views/PhotoDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C3A25FA1F1842EF00B329A3 /* PhotoDetailCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoDetailCollectionViewController.swift; path = ViewControllers/PhotoDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		FA72220D837EFDF156D38274 /* Pods-500px Mobile Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-500px Mobile Challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-500px Mobile Challenge/Pods-500px Mobile Challenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				9C3A25E01F16CC6000B329A3 /* PhotoCollectionViewCell.swift */,
+				9C3A25F81F183B2200B329A3 /* PhotoDetailCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				9C3A25F21F16FBA900B329A3 /* PhotoCollectionViewController.swift */,
+				9C3A25FA1F1842EF00B329A3 /* PhotoDetailCollectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -507,6 +513,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3A25FB1F1842EF00B329A3 /* PhotoDetailCollectionViewController.swift in Sources */,
+				9C3A25F91F183B2200B329A3 /* PhotoDetailCollectionViewCell.swift in Sources */,
 				9C3A25F01F16F12400B329A3 /* Photo.swift in Sources */,
 				9C3A25E41F16D02600B329A3 /* APIManager.swift in Sources */,
 				9C3A25E11F16CC6000B329A3 /* PhotoCollectionViewCell.swift in Sources */,
