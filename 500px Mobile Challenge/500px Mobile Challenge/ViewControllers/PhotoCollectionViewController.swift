@@ -10,25 +10,16 @@ import UIKit
 import Kingfisher
 
 private let reuseIdentifier = "PhotoCell"
+private let loadNextPageIndexPathOffset = 4
 
 class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var dataSource = [Photo]()
+    var nextPage = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIManager.sharedInstance.fetchPhotos(feature: APIConstants.FeaturePopular, numberOfImages: 20, imageSize: APIConstants.ImageSize300pxHigh) { [weak self] (photoStream, error) in
-            guard error == nil else {
-                print("error fetching photos \(String(describing: error?.localizedDescription))")
-                return
-            }
-            guard let photoStream = photoStream else {
-                print("no photostream received")
-                return
-            }
-            self?.dataSource = photoStream.photos
-            self?.collectionView?.reloadData()
-        }
+        fetchNextPageOfPhotos()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,6 +41,22 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
             print("segue not recognized")
         }
         
+    }
+    
+    fileprivate func fetchNextPageOfPhotos() {
+        APIManager.sharedInstance.fetchPhotos(feature: APIConstants.FeaturePopular, page: nextPage, numberOfImages: 20, imageSize: APIConstants.ImageSize300pxHigh) { [weak self] (photoStream, error) in
+            guard error == nil else {
+                print("error fetching photos \(String(describing: error?.localizedDescription))")
+                return
+            }
+            guard let photoStream = photoStream else {
+                print("no photostream received")
+                return
+            }
+            self?.dataSource.append(contentsOf: photoStream.photos)
+            self?.collectionView?.reloadData()
+            self?.nextPage += 1
+        }
     }
     
     // MARK: UICollectionViewDataSource
@@ -78,15 +85,21 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
     }
     
     // MARK: UICollectionViewDelegate
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // start fetching the next set of photos
+        if indexPath.item == dataSource.count - loadNextPageIndexPathOffset {
+            fetchNextPageOfPhotos()
+        }
     }
+    
+    
+    // MARK: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width / 2, height: view.frame.width / 2)
     }
-    
+
 }
 
 extension PhotoCollectionViewController: PhotoDetailCollectionViewControllerDelegate {

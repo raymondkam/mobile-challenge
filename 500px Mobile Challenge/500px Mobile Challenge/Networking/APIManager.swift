@@ -18,8 +18,13 @@ class APIManager {
         return instance
     }()
     
-    func fetchPhotos(feature: String, numberOfImages: Int, imageSize: String, completion: @escaping (_ photoStream: PhotoStream?, _ error: Error?) -> Void) {
+    func fetchPhotos(feature: String,
+                     page: Int,
+                     numberOfImages: Int,
+                     imageSize: String,
+                     completion: @escaping (_ photoStream: PhotoStream?, _ error: Error?) -> Void) {
         let parameters = ["feature": feature,
+                          "page": String(page),
                           "exclude": APIConstants.CategoryNude,
                           "rpp": String(numberOfImages),
                           "image_size": APIConstants.ImageSize300pxHigh,
