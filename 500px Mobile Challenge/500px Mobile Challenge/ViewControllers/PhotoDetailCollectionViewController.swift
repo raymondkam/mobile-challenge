@@ -11,14 +11,17 @@ import Kingfisher
 
 protocol PhotoDetailCollectionViewControllerDelegate: class {
     func photoDetailCollectionViewControllerDidScrollToNewIndexPath(_: PhotoDetailCollectionViewController, indexPath: IndexPath)
+    func photoDetailCollectionViewControllerDidFetchNextPageOfPhotos(_: PhotoDetailCollectionViewController, photos: [Photo], nextPage: Int)
 }
 
 private let reuseIdentifier = "PhotoDetailCell"
+private let loadNextPageIndexPathOffset = 2 // different offset from grid
 
 class PhotoDetailCollectionViewController: UIViewController {
 
+    var nextPage: Int!
     var dataSource = [Photo]()
-    var currentIndexPath: IndexPath?
+    var currentIndexPath: IndexPath!
     weak var delegate: PhotoDetailCollectionViewControllerDelegate?
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -80,12 +83,42 @@ class PhotoDetailCollectionViewController: UIViewController {
         votesLabel.text = "\(photo.votesCount) people"
     }
     
+    fileprivate func fetchNextPageOfPhotos() {
+        APIManager.sharedInstance.fetchPhotos(feature: APIConstants.FeaturePopular, page: nextPage, numberOfImages: fetchNumberOfImages, imageSize: APIConstants.ImageSize300pxHigh, includeNsfw: false) { [weak self] (photoStream, error) in
+            guard error == nil else {
+                print("error fetching photos \(String(describing: error?.localizedDescription))")
+                return
+            }
+            guard let photoStream = photoStream else {
+                print("no photostream received")
+                return
+            }
+            guard let weakSelf = self else {
+                print("self does not exist")
+                return
+            }
+            weakSelf.dataSource.append(contentsOf: photoStream.photos)
+            weakSelf.collectionView?.reloadData()
+            weakSelf.nextPage? += 1
+            
+            // update grid photos
+            weakSelf.delegate?.photoDetailCollectionViewControllerDidFetchNextPageOfPhotos(weakSelf, photos: photoStream.photos, nextPage: weakSelf.nextPage)
+        }
+    }
+    
     @IBAction func handleCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 }
 
 extension PhotoDetailCollectionViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // start fetching the next set of photos
+        if indexPath.item == dataSource.count - loadNextPageIndexPathOffset {
+            fetchNextPageOfPhotos()
+        }
+    }
     
 }
 

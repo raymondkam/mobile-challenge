@@ -11,9 +11,10 @@ import UIKit
 import Kingfisher
 import GreedoLayout
 
+let fetchNumberOfImages = 20
+
 private let reuseIdentifier = "PhotoCell"
-private let loadNextPageIndexPathOffset = 4
-private let fetchNumberOfImages = 20
+private let loadNextPageIndexPathOffset = 5
 private let greedoRowMaximumHeight: CGFloat = 200.0
 
 class PhotoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -45,6 +46,7 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
                     let photoDetailViewController = segue.destination as! PhotoDetailCollectionViewController
                     photoDetailViewController.dataSource = dataSource
                     photoDetailViewController.currentIndexPath = indexPath
+                    photoDetailViewController.nextPage = nextPage
                     photoDetailViewController.delegate = self
                 }
             }
@@ -123,6 +125,12 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
 }
 
 extension PhotoCollectionViewController: PhotoDetailCollectionViewControllerDelegate {
+    func photoDetailCollectionViewControllerDidFetchNextPageOfPhotos(_: PhotoDetailCollectionViewController, photos: [Photo], nextPage: Int) {
+        self.nextPage = nextPage
+        self.dataSource.append(contentsOf: photos)
+        self.collectionView?.reloadData()
+    }
+
     
     func photoDetailCollectionViewControllerDidScrollToNewIndexPath(_: PhotoDetailCollectionViewController, indexPath: IndexPath) {
         collectionView?.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
