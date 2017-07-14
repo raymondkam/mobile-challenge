@@ -33,6 +33,8 @@ class PhotoDetailCollectionViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         if let currentIndexPath = currentIndexPath {
             collectionView.scrollToItem(at: currentIndexPath, at: .left, animated: false)
         }
@@ -40,6 +42,27 @@ class PhotoDetailCollectionViewController: UIViewController {
 
     @IBAction func handleCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        guard let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        flowLayout.invalidateLayout()
+        
+        coordinator.animate(alongsideTransition: { [weak self] (context:UIViewControllerTransitionCoordinatorContext) in
+            guard let currentIndexPath = self?.currentIndexPath else {
+                return
+            }
+            
+            self?.collectionView.scrollToItem(at: currentIndexPath, at: .left, animated: false)
+            
+        }) { (context:UIViewControllerTransitionCoordinatorContext) in
+            
+        }
     }
 }
 
@@ -66,7 +89,7 @@ extension PhotoDetailCollectionViewController: UICollectionViewDataSource {
             return dictionary["url"] != nil
         })?["url"] as? String {
             let url = URL(string: urlString)
-            photoDetailCell.imageView.kf.setImage(with: url)
+            photoDetailCell.imageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
         }
         
         // Configure the cell
@@ -102,6 +125,8 @@ extension PhotoDetailCollectionViewController: UIScrollViewDelegate {
         let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
         
         print(visibleIndexPath)
+        
+        currentIndexPath = visibleIndexPath
         
         delegate?.photoDetailCollectionViewControllerDidScrollToNewIndexPath(self, indexPath: visibleIndexPath)
     }

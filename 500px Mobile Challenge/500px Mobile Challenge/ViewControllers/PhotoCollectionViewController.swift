@@ -43,6 +43,15 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
         
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        guard let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        flowLayout.invalidateLayout()
+    }
+    
     fileprivate func fetchNextPageOfPhotos() {
         APIManager.sharedInstance.fetchPhotos(feature: APIConstants.FeaturePopular, page: nextPage, numberOfImages: 20, imageSize: APIConstants.ImageSize300pxHigh) { [weak self] (photoStream, error) in
             guard error == nil else {
@@ -78,7 +87,7 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
             return dictionary["url"] != nil
         })?["url"] as? String {
             let url = URL(string: urlString)
-            cell.imageView.kf.setImage(with: url)
+            cell.imageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
         }
         
         return cell
